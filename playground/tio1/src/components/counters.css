@@ -1,0 +1,41 @@
+@font-face {
+    font-family: digital-lcd;
+    src: url(../../resources/fonts/digit-lcd/DIGIT-LCD.ttf);
+}
+
+.time{
+	text-align: center;
+	margin: auto;
+	font-size: 300%;
+	font-family: digital-lcd;
+	padding-left: 6px;
+	padding-right: 5px;
+	padding-top: 5px;
+	border-color: rgb(133, 133, 133);
+	border-width: 2px;
+	border-style: solid;
+}
+
+.timeType{
+	
+}
+
+.counter{
+	margin: auto;
+	margin-bottom: 5%;
+	text-align: center;
+	width: 33%;
+}
+
+
+.numbers{
+	position: relative;
+	padding-bottom: 10%;
+}
+
+table{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

@@ -1,6 +1,7 @@
 import  dateDifference  from '../../scripts/dateDifference.js'
 import getCounters from '../../scripts/getCounters.jsx'
 import { useState, useEffect } from 'react'
+import './counters.css'
 
 export const Counter = ({endDate}) => {
   const [ currDate, setCurrDate] = useState(new Date())
@@ -19,10 +20,10 @@ export const Counter = ({endDate}) => {
 
   const handleClick = () => selectedCounter < dateDiff.length-1 ? setSelectedCounter(selectedCounter + 1) : setSelectedCounter(0)
   return( 
-    <div>
-      <CurrCounter arr = {dateDiff[selectedCounter]()}/>
+    <div className='counter'>
+      <div className='numbers'><CurrCounter arr = {dateDiff[selectedCounter]()}/></div>
       <br></br>
-      <button onClick={handleClick}>"Change format"</button>
+      <button onClick={handleClick}>Change format</button>
     </div>
   )
 }
@@ -31,7 +32,9 @@ export const Counter = ({endDate}) => {
 export const SingleCounter = ({time, type}) => {
     return (
       <td>
-        {time}<br></br>{time == 1 ? type.slice(0,-1) : type}
+        <span className='time'>{time}</span> 
+          <br />
+        <span className='timeType'>{time == 1 ? type.slice(0,-1) : type}</span>
       </td>
     )
 }
