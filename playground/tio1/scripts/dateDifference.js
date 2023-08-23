@@ -18,11 +18,13 @@ export default function (currDate, endDate){
 	const finMon = diffRY % 12
 	const finY = diffRY
 
-	const diffTypes = {
-		dhms : function() {return [[Math.floor(finD),Math.floor(finH),Math.floor(finMin),Math.floor(finSecs)],["days", "hours", "minutes", "seconds"]]},
-		ydhms : function() {return [[Math.floor(finY),Math.floor(finD),Math.floor(finH),Math.floor(finMin),Math.floor(finSecs)],["years","days", "hours", "minutes", "seconds"]]},
-		seconds : function(){return finSecs}
-	}
+	const diffTypes = [
+		function() {return [[Math.floor(finY),Math.floor(finD),Math.floor(finH),Math.floor(finMin),Math.floor(finSecs)],["years","days", "hours", "minutes", "seconds"]]},
+		function() {return [[Math.floor(diffRD),Math.floor(finH),Math.floor(finMin),Math.floor(finSecs)],["days", "hours", "minutes", "seconds"]]},
+		function() {return [[Math.floor(diffRH),Math.floor(finMin),Math.floor(finSecs)],["hours", "minutes", "seconds"]]},
+		function() {return [[Math.floor(diffRMin),Math.floor(finSecs)],["minutes", "seconds"]]},
+		function() {return [[Math.floor(diffRS)],["seconds"]]}
+	]
 
 
 	return diffTypes
