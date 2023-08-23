@@ -4,7 +4,7 @@ export default function (currDate, endDate){
 	const diffRS = diffRMil / 1000
 	const diffRMin = diffRS / 60
 	const diffRH = diffRMin / 60
-	const diffRD = diffRH / 24
+	const diffRD = endDate.getDays() - currDate.getTime()
 	const diffRW = diffRD / 7
 	const diffRMon = diffRD / 30
 	const diffRY = diffRD / 365
