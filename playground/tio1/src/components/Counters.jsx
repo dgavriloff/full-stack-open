@@ -22,8 +22,9 @@ export const Counter = ({endDate}) => {
   return( 
     <div className='counter'>
       <div className='numbers'><CurrCounter arr = {dateDiff[selectedCounter]()}/></div>
-      <br></br>
+      <hr />
       <button onClick={handleClick}>Change format</button>
+      <hr />
     </div>
   )
 }
